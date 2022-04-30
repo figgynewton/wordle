@@ -1,3 +1,6 @@
+import initState from "../store/initState";
+import C_W from "./Checker";
+
 const rootReducer=(state, action)=>{
 
     let activeGuess = state.guesses[state.try];
@@ -13,6 +16,25 @@ const rootReducer=(state, action)=>{
             }
 
             return nS;
+
+        case "newGame":
+            const newState = initState();
+            let nG = {
+                try: newState.try,
+                guesses: newState.guesses,
+                answer: newState.answer,
+                guessed: newState.guessed,
+                change: newState.change,
+                end: newState.end,
+                win: newState.win,
+                warn: newState.warn,
+                press: newState.press,
+                help: false
+            }
+
+            return nG;
+
+
 
         case "inputLetter":
             let nL;
@@ -87,7 +109,7 @@ const rootReducer=(state, action)=>{
             let addLetters = state.guessed;
             let nGs;
 
-            if(activeGuess.indexOf('')===-1 && !state.end) {
+            if(activeGuess.indexOf('')===-1 && !state.end && C_W(newGuesses[state.try].join(''))) {
                 newGuesses[state.try] = activeGuess;
                 addLetters = addLetters + activeGuess.join('');
                 if (newGuesses[state.try].join('') === state.answer.join('')) {

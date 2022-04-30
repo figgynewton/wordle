@@ -1,4 +1,3 @@
-import {useSelector} from "react-redux";
 
 function GL(props){
     return(

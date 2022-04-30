@@ -1,6 +1,8 @@
-export const NewGame= () =>{
+export const newGame= () =>{
 
     return{
-        type:"NewGame"
+        type:"newGame"
     }
 }
+
+export default newGame;
