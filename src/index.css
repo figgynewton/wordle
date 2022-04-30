@@ -101,6 +101,7 @@ html,body{
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 36px;
   border: 2px solid #939598;
 }
 
@@ -129,6 +130,10 @@ html,body{
   background-color: #939598;
   color: white;
   margin: 0 5px 0 0;
+}
+
+.key.z {
+  margin-left: 10.2px;
 }
 
 .key.submit {

@@ -1,4 +1,3 @@
-
 function GL(props){
     return(
         <div className={"gl"}>
