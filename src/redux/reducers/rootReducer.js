@@ -4,6 +4,16 @@ const rootReducer=(state, action)=>{
     let newGuesses = state.guesses;
 
     switch (action.type){
+
+        case "ToggleHelp":
+
+            let nS ={
+                ...state,
+                help: !state.help
+            }
+
+            return nS;
+
         case "inputLetter":
             let nL;
 
@@ -22,8 +32,10 @@ const rootReducer=(state, action)=>{
             nL={
                 ...state,
                 guesses:newGuesses,
-                change:!state.change
-            }
+                change:!state.change,
+                press: !state.press
+            };
+
 
             return nL;
 
@@ -56,9 +68,11 @@ const rootReducer=(state, action)=>{
                 nD={
                     ...state,
                     guesses: newGuesses,
-                    change: !state.change
+                    change: !state.change,
+                    warn: wn,
+                    press: !state.press
 
-                }
+                };
 
                 return nD;
 
@@ -70,10 +84,12 @@ const rootReducer=(state, action)=>{
             let newTry = state.try+1;
             let win = state.win;
             let end = state.end;
-            let nG;
+            let addLetters = state.guessed;
+            let nGs;
 
             if(activeGuess.indexOf('')===-1 && !state.end) {
                 newGuesses[state.try] = activeGuess;
+                addLetters = addLetters + activeGuess.join('');
                 if (newGuesses[state.try].join('') === state.answer.join('')) {
                     win = true;
                     end = true;
@@ -86,20 +102,25 @@ const rootReducer=(state, action)=>{
                     }
                 }
 
-                nG = {
+                nGs = {
                     ...state,
                     guesses: newGuesses,
                     try: newTry,
                     change: !state.change,
                     win: win,
                     end: end,
+                    guessed: addLetters,
+                    warn: false,
+                    press: !state.press
                 }
-                return nG
+                return nGs;
             }else{
-                nG={
-                    ...state
+                nGs={
+                    ...state,
+                    warn: true,
+                    press: !state.press
                 }
-                return nG;
+                return nGs;
             }
 
 
@@ -108,8 +129,6 @@ const rootReducer=(state, action)=>{
             return state;
         }
     }
-
-    return state;
 }
 
 export default rootReducer;
