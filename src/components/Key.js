@@ -1,6 +1,5 @@
 import {useDispatch} from "react-redux";
 import inputLetter from "../redux/actions/inputLetter";
-import {Style} from "../assets/Style";
 
 function Key(props){
 
