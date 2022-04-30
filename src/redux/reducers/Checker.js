@@ -1,5 +1,5 @@
-import {WORDS} from "../../assets/words/Words";
+import {Words} from "../../assets/words/Words";
 
-export default  function C_W(word){
-    return WORDS.some((x)=>x===word)
+export default function C_W(word){
+    return Words.some((x)=>x===word)
 }

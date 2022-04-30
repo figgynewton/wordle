@@ -1,12 +1,12 @@
 import initState from "../store/initState";
 import C_W from "./Checker";
 
-const rootReducer=(state, action)=>{
+const rootReducer=(state, action)=> {
 
     let activeGuess = state.guesses[state.try];
     let newGuesses = state.guesses;
 
-    switch (action.type){
+    switch (action.type) {
 
         case "ToggleHelp":
 
@@ -34,8 +34,6 @@ const rootReducer=(state, action)=>{
 
             return nG;
 
-
-
         case "inputLetter":
             let nL;
 
@@ -60,6 +58,7 @@ const rootReducer=(state, action)=>{
 
 
             return nL;
+
 
         case "Delete":
             let nD;
@@ -101,6 +100,7 @@ const rootReducer=(state, action)=>{
             }
 
             break;
+
 
         case "submitGuess":
             let newTry = state.try+1;
@@ -145,12 +145,10 @@ const rootReducer=(state, action)=>{
                 return nGs;
             }
 
-
-
-        default: {
+        default:
             return state;
-        }
     }
 }
+
 
 export default rootReducer;
