@@ -65,9 +65,9 @@ function Main() {
             <Keys/>
             {end && <div className="message">
                 <div className="tab" style={{backgroundColor: color}}>
-                    {win && <h1>You Win</h1>}
-                    {end && !win ? <h1>You Lose. The Answer was {answer.join('')}</h1> : ""}
-                    <h2 onClick={create_new_game}>Play Again?</h2>
+                    {win && <h1>You Won</h1>}
+                    {end && !win ? <h1>Close! Answer: {answer.join('')}</h1> : ""}
+                    <h2 onClick={create_new_game}>Play Again</h2>
                 </div>
             </div>}
 

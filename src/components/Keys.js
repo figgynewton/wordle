@@ -2,6 +2,7 @@ import Key from "./Key";
 import {Delete} from "../redux/actions/Delete";
 import submitGuess from "../redux/actions/submitGuess";
 import {useDispatch} from "react-redux";
+import { FiDelete } from "react-icons/fi";
 
 function Keys(){
     const keys = 'qwertyuiopasdfghjklzxcvbnm'.split("");
@@ -15,7 +16,7 @@ function Keys(){
         <div className="keys">
             {keys_ele}
             <button className={"key submit"} onClick={()=>dispatch(submitGuess())}>Enter</button>
-            <button className={"key delete"} onClick={()=>dispatch(Delete())}>Delete</button>
+            <button className={"key delete"} onClick={()=>dispatch(Delete())}><FiDelete/></button>
         </div>
     )
 }
