@@ -1,5 +1,5 @@
 import initState from "../store/initState";
-import C_W from "./Checker";
+import C from "./Checker";
 
 const rootReducer=(state, action)=>{
 
@@ -41,11 +41,14 @@ const rootReducer=(state, action)=>{
 
             if(!state.end){
                 const index = activeGuess.indexOf('');
-                let wn = false;
                 if(activeGuess.includes("" && index < state.answer.length)){
                     activeGuess[index]=action.val;
                 }else{
-                    wn = true;
+                    let letterBlock = document.getElementById('guesses').children[state.try].children[4];
+                    letterBlock.style.animation = 'boxVibrate 0.3s 1';
+                    setTimeout(function() {
+                        letterBlock.style.animation = 'none';
+                    }, 300);
                 }
             }
 
@@ -77,10 +80,14 @@ const rootReducer=(state, action)=>{
                         }
                     }
                 }
-
-                if(activeGuess.indexOf('')===0){
-                    wn=true;
+                if (activeGuess.indexOf('') === 0) {
+                    let letterBlock = document.getElementById('guesses').children[state.try].children[0];
+                    letterBlock.style.animation = 'boxVibrate 0.3s 1';
+                    setTimeout(function () {
+                        letterBlock.style.animation = 'none';
+                    }, 300);
                 }
+
 
                 const index = activeGuess.lastIndexOf(item);
                 activeGuess[index]='';
@@ -109,9 +116,27 @@ const rootReducer=(state, action)=>{
             let addLetters = state.guessed;
             let nGs;
 
-            if(activeGuess.indexOf('')===-1 && !state.end && C_W(newGuesses[state.try].join(''))) {
+
+            if(activeGuess.indexOf('')===-1 && !state.end && C(newGuesses[state.try].join(''))) {
                 newGuesses[state.try] = activeGuess;
                 addLetters = addLetters + activeGuess.join('');
+
+                for (let i = 0; i < 5; i++) {
+                    let color = 'transparent';
+
+                    if (newGuesses[state.try][i] === state.answer[i]) {
+                        color = '#538D4E';
+                    } else if (state.answer.indexOf(newGuesses[state.try][i]) !== -1) {
+                        color = '#B59F3B';
+                    } else {
+                        color = '#3B3A3D';
+                    }
+                }
+
+
+
+                for (let j = 0; j < 27; j++)
+
                 if (newGuesses[state.try].join('') === state.answer.join('')) {
                     win = true;
                     end = true;

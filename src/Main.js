@@ -46,14 +46,6 @@ function Main() {
 
     useEventListener("keydown", handler);
 
-    let color;
-
-    if(win){
-        color="green"
-    }else{
-        color="red";
-    }
-
     const create_new_game=()=>{
         dispatch(newGame())
     }
