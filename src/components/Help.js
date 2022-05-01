@@ -1,5 +1,5 @@
 import {useDispatch, useSelector} from "react-redux";
-import {ToggleHelp} from "../redux/actions/ToggleHelp";
+import {toggleHelp} from "../redux/actions/toggleHelp";
 import {Style} from "../assets/Style";
 
 function Help(){
@@ -22,7 +22,7 @@ function Help(){
 
     return(
         <div className="help" style={style}>
-            <div className="close" onClick={()=>dispatch(ToggleHelp())}>X</div>
+            <div className="close" onClick={()=>dispatch(toggleHelp())}>X</div>
             <div className="help-wrap">
                 <h3>How to play</h3>
                 <p>Guess the word in six tries.</p>

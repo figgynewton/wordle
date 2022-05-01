@@ -8,14 +8,14 @@ const rootReducer=(state, action)=>{
 
     switch (action.type){
 
-        case "ToggleHelp":
+        case "toggleHelp":
 
-            let nS ={
+            let nH ={
                 ...state,
                 help: !state.help
             }
 
-            return nS;
+            return nH;
 
         case "newGame":
             const newState = initState();
@@ -152,5 +152,6 @@ const rootReducer=(state, action)=>{
         }
     }
 }
+
 
 export default rootReducer;

@@ -58,15 +58,19 @@ function Main() {
         dispatch(newGame())
     }
 
+        const current = new Date();
+        const date = `${current.getMonth()+1}/${current.getDate()}/${current.getFullYear()}`;
+
     return (
         <div className="contain">
             <h1>React Wordle</h1>
+            <p>{date}</p>
             <Guesses/>
             <Keys/>
             {end && <div className="message">
-                <div className="tab" style={{backgroundColor: color}}>
+                <div className="tab">
                     {win && <h1>You Won</h1>}
-                    {end && !win ? <h1>Close! Answer: {answer.join('')}</h1> : ""}
+                    {end && !win ? <h1>Answer: {answer.join('')}</h1> : ""}
                     <h2 onClick={create_new_game}>Play Again</h2>
                 </div>
             </div>}
