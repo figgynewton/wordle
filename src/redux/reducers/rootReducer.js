@@ -17,6 +17,15 @@ const rootReducer=(state, action)=>{
 
             return nH;
 
+        case "toggleTheme":
+
+            let nT ={
+                ...state,
+                theme: !state.theme
+            }
+
+            return nT;
+
         case "toggleAbout":
 
             let nA ={

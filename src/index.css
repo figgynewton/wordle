@@ -72,6 +72,14 @@ html,body{
   z-index: 99;
 }
 
+.th{
+  cursor: pointer;
+}
+
+.nav{
+  
+}
+
 .guesses{
   display: flex;
   flex-direction: column;

@@ -17,9 +17,11 @@ function App() {
             <nav>
             <Link to={"/about"}>About</Link>
             </nav>
-            <button type="button" onClick={toggleTheme}>Toggle Theme</button>
             <div className="hp" onClick={()=>dispatch(toggleHelp())}>
                 <h3>?</h3>
+            </div>
+            <div className="th" onClick={()=>dispatch(toggleTheme())}>
+                <h3>Change Theme</h3>
             </div>
             <Help/>
             <Outlet/>
