@@ -74,10 +74,21 @@ html,body{
 
 .th{
   cursor: pointer;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0px;
+  left: 12px;
 }
 
-.nav{
-  
+.ab{
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
 }
 
 .guesses{

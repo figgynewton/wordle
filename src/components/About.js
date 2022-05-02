@@ -7,7 +7,7 @@ function About(){
             <nav>
             <Link to={"/"}>Home</Link>
             </nav>
-                <div className="about">
+                <div className="ab">
                     <p>Newt is a student at IUPUI, studying Computer Information & Technology
                 concentrating in Web & Software Development. Hope you enjoy the game!</p>
                 </div>
