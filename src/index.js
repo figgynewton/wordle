@@ -7,8 +7,10 @@ import {Provider} from "react-redux";
 import configureStore from "./redux/store";
 import Main from "./Main";
 import About from "./components/About";
+import {ThemeProvider} from "./redux/actions/Theme";
 
 ReactDOM.render(
+    <ThemeProvider>
     <BrowserRouter>
         <Provider store={configureStore()}>
             <Routes>
@@ -19,6 +21,7 @@ ReactDOM.render(
             </Routes>
         </Provider>
     </BrowserRouter>
+    </ThemeProvider>
 
     ,
     document.getElementById('root')
