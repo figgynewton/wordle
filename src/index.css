@@ -76,6 +76,35 @@ html,body{
   cursor: pointer;
 }
 
+.about .close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 60px;
+  width: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 36px;
+}
+
+.about .about-wrap {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+  max-width: 360px;
+}
+.about .about-wrap p {
+  width: 100%;
+}
+
+.about.about-wrap h3,
+.about .about-wrap p {
+  margin-top: 8px;
+}
+
 .guesses{
   display: flex;
   flex-direction: column;

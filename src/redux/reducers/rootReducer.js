@@ -17,6 +17,15 @@ const rootReducer=(state, action)=>{
 
             return nH;
 
+        case "toggleAbout":
+
+            let nA ={
+                ...state,
+                about: !state.about
+            }
+
+            return nA;
+
         case "newGame":
             const newState = initState();
             let nG = {

@@ -6,6 +6,7 @@ import {BrowserRouter, Routes, Route} from "react-router-dom";
 import {Provider} from "react-redux";
 import configureStore from "./redux/store";
 import Main from "./Main";
+import About from "./components/About";
 
 ReactDOM.render(
     <BrowserRouter>
@@ -13,6 +14,7 @@ ReactDOM.render(
             <Routes>
                 <Route path={"/"}  element={<App/>}>
                     <Route index element={<Main/>}/>
+                    <Route path ={"about"} element={<About/>}/>
                 </Route>
             </Routes>
         </Provider>
